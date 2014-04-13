@@ -9,10 +9,11 @@
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         g = Panel1.CreateGraphics
+        g.Clear(Color.White)
         For x = 0 To 9
             For y = 0 To 15
                 If mozgo(x, y) Then
-                    g.DrawRectangle(Pens.Black, (x + 1) * 17, (y + 1) * 17, 15, 15)
+                    g.DrawRectangle(Pens.Black, (x) * 17, (y) * 17, 15, 15)
 
                 End If
             Next
@@ -24,8 +25,9 @@
     End Sub
 
     Private Sub eses()
-        For x = 0 To 9
-            For y = 0 To 15
+        For x = 9 To 0 Step -1
+            For y = 15 To 0 Step -1
+
                 If mozgo(x, y) And y < 15 Then
                     mozgo(x, y) = False
                     mozgo(x, y + 1) = True
@@ -43,8 +45,8 @@
         For Each a In allo
             a = False
         Next
-        mozgo(4, 4) = True
-        mozgo(5, 4) = True
+        mozgo(4, 0) = True
+        mozgo(5, 0) = True
 
 
         For x = 0 To 9
