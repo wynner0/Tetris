@@ -30,6 +30,7 @@ Partial Class Form1
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
@@ -42,7 +43,7 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(307, 12)
+        Me.Button1.Location = New System.Drawing.Point(188, 12)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 1
@@ -56,6 +57,7 @@ Partial Class Form1
         Me.ClientSize = New System.Drawing.Size(582, 300)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
+        Me.KeyPreview = True
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
