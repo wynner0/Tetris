@@ -22,12 +22,13 @@
     End Sub
     Private Sub mozgorajzol()
         g = Panel1.CreateGraphics
-        g.Clear(Color.White)
+
         For x = 0 To 9
             For y = 0 To 15
                 If mozgo(x, y) Then
                     g.DrawRectangle(Pens.Black, (x) * 17, (y) * 17, 15, 15)
-
+                Else
+                    g.DrawRectangle(Pens.White, (x) * 17, (y) * 17, 15, 15)
                 End If
                
             Next
@@ -36,10 +37,13 @@
 
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+
+
         mozgorajzol()
+        allorajzol()
         eses()
         érkezés()
-        allorajzol()
+
     End Sub
     Private Sub érkezés()
         For x = 0 To 9
@@ -73,10 +77,13 @@
 
     End Sub
     Private Sub eses()
+        g = Panel1.CreateGraphics
         For x = 9 To 0 Step -1
             For y = 15 To 0 Step -1
 
                 If mozgo(x, y) And y < 15 Then
+                    'g.DrawRectangle(Pens.Black, (x) * 17, (y + 1) * 17, 15, 15)
+                    'g.DrawRectangle(Pens.White, (x) * 17, (y) * 17, 15, 15)
                     mozgo(x, y) = False
                     mozgo(x, y + 1) = True
                     pos = y + 1
